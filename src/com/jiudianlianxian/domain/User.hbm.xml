@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.jiudianlianxian.domain.User" table="t_user">
+		<id name="user_id" column="user_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="user_uid" column="user_uid"></property>
+		<property name="user_nickname" column="user_nickname"></property>
+		<property name="user_realname" column="user_realname"></property>
+		<property name="user_banji" column="user_banji"></property>
+		<property name="user_cash" column="user_cash"></property>
+		<property name="user_reg_type" column="user_reg_type"></property>
+		<property name="user_stop_time" column="user_stop_time"></property>
+		<property name="user_sex" column="user_sex"></property>
+		<property name="user_head_image" column="user_head_image"></property>
+		<property name="user_filename" column="user_filename"></property>
+		<property name="user_phonenumber" column="user_phonenumber"></property>
+		<property name="user_password" column="user_password"></property>
+		
+		<!-- name属性：用户set集合名 -->
+		<!-- table属性：第三张表名 -->
+		<set name="user_setOrders" table="user_order" cascade="save-update,delete">
+			<!-- key标签里面的配置 -->
+			<!-- column属性：配置当前映射文件在第三张表的外键名称 -->
+			<key column="userid"></key>
+			<!-- class属性：用户实体类全路径 -->
+			<!-- column属性：用户在第三张表的外键名称 -->
+			<many-to-many class="com.jiudianlianxian.domain.Order" column="orderid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
