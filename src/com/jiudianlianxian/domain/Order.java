@@ -1,7 +1,7 @@
 package com.jiudianlianxian.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
+
 
 
 
@@ -18,43 +18,93 @@ import java.util.Set;
  */
 public class Order {
 	
-	private Integer order_id;
-	private String order_oid;
-	private String order_signString;
+	private Integer order_id = 0;
+	private String order_oid = null;
+	private String order_signString = null;
 	
-	private Set<User> order_setUsers = new HashSet<User>();
+	private String order_state = null;
+	private Date order_date = new Date();
+	private Double order_price = null;
+	
+	
+	private User user 
+	
+//	= new User()
+	
+	;
+
 
 	public Integer getOrder_id() {
 		return order_id;
 	}
 
+
 	public void setOrder_id(Integer order_id) {
 		this.order_id = order_id;
 	}
+
 
 	public String getOrder_oid() {
 		return order_oid;
 	}
 
+
 	public void setOrder_oid(String order_oid) {
 		this.order_oid = order_oid;
 	}
+
 
 	public String getOrder_signString() {
 		return order_signString;
 	}
 
+
 	public void setOrder_signString(String order_signString) {
 		this.order_signString = order_signString;
 	}
 
-	public Set<User> getOrder_setUsers() {
-		return order_setUsers;
+
+	public String getOrder_state() {
+		return order_state;
 	}
 
-	public void setOrder_setUsers(Set<User> order_setUsers) {
-		this.order_setUsers = order_setUsers;
+
+	public void setOrder_state(String order_state) {
+		this.order_state = order_state;
 	}
+
+
+	public Date getOrder_date() {
+		return order_date;
+	}
+
+
+	public void setOrder_date(Date order_date) {
+		this.order_date = order_date;
+	}
+
+
+	public Double getOrder_price() {
+		return order_price;
+	}
+
+
+	public void setOrder_price(Double order_price) {
+		this.order_price = order_price;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	
+	
 
 
 

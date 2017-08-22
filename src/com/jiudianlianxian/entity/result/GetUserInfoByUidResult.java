@@ -1,6 +1,7 @@
 package com.jiudianlianxian.entity.result;
 
 import com.jiudianlianxian.entity.BaseResult;
+import com.jiudianlianxian.entity.data.GetUserInfoByUidData;
 
 
 /**
@@ -16,16 +17,17 @@ import com.jiudianlianxian.entity.BaseResult;
 public class GetUserInfoByUidResult extends BaseResult {
 	
 	
-	private GetUserInfoByUidResult getUserInfoByUidResult;
+	private GetUserInfoByUidData getUserInfoByUidData = new GetUserInfoByUidData();
 
-	public GetUserInfoByUidResult getGetUserInfoByUidResult() {
-		return getUserInfoByUidResult;
+	public GetUserInfoByUidData getGetUserInfoByUidData() {
+		return getUserInfoByUidData;
 	}
 
-	public void setGetUserInfoByUidResult(
-			GetUserInfoByUidResult getUserInfoByUidResult) {
-		this.getUserInfoByUidResult = getUserInfoByUidResult;
+	public void setGetUserInfoByUidData(GetUserInfoByUidData getUserInfoByUidData) {
+		this.getUserInfoByUidData = getUserInfoByUidData;
 	}
+
+	
 	
 	
 

@@ -14,55 +14,55 @@ import java.util.Set;
  *
  */
 public class User {
-	private Integer user_id;
+	private Integer user_id = 0;
 	/**
 	 * 用户uid
 	 */
-	private String user_uid;
+	private String user_uid = null;
 	/**
 	 * 用户昵称
 	 */
-	private String user_nickname;
+	private String user_nickname = null;
 	/**
 	 * 用户真实姓名
 	 */
-	private String user_realname;
+	private String user_realname = null;
 	/**
 	 * 用户年级名称
 	 */
-	private String user_banji;
+	private String user_banji = null;
 	/**
 	 * 用户淘课币
 	 */
-	private String user_cash;
+	private String user_cash = null;
 	/**
 	 * 用户注册方式
 	 */
-	private String user_reg_type;
+	private String user_reg_type = null;
 	/**
 	 * 用户年卡截止时间
 	 */
-	private String user_stop_time;
+	private String user_stop_time = null;
 	/**
 	 * 用户性别
 	 */
-	private String user_sex;
+	private String user_sex = null;
 	/**
-	 * 用户头像地址
+	 * 用户头像（地址）
 	 */
-	private String user_head_image;
+	private String user_head_image = null;
 	/**
 	 * 用户用户头像文件名
 	 */
-	private String user_filename;
+	private String user_filename = null;
 	/**
 	 * 用户手机号
 	 */
-	private String user_phonenumber;
+	private String user_phonenumber = null;
 	/**
 	 * 用户密码
 	 */
-	private String user_password;
+	private String user_password = null;
 	
 	
 	/**

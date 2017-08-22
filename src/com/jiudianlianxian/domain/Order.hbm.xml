@@ -4,36 +4,34 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<!-- 1 配置类和表对应 
-		class标签
-		name属性：实体类全路径
-		table属性：数据库表名称
-	-->
+	<!-- 1 配置类和表对应 class标签 name属性：实体类全路径 table属性：数据库表名称 -->
 	<class name="com.jiudianlianxian.domain.Order" table="t_order">
 		<id name="order_id" column="order_id">
 			<generator class="native"></generator>
 		</id>
 		<property name="order_oid" column="order_oid"></property>
 		<property name="order_signString" column="order_signString"></property>
+		<property name="order_state" column="order_state"></property>
+		<property name="order_date" column="order_date"></property>
+		<property name="order_price" column="order_price"></property>
 		
-		<!-- 在客户映射文件中，表示所有联系人 
-			使用set标签表示所有联系人
-			set标签里面有name属性：
-			     属性值写在客户实体类里面表示联系人的set集合名称
-			     
-			 inverse属性默认值：false不放弃关系维护
-			                true表示放弃关系维护
-		-->
-		<!-- inverse属性：默认false即不放弃维护外键的机会，true即放弃维护外键的机会   配置了inverse属性为true后，添加联系人时，就不会再客户方维护联系人的外键，需要再次手动维护    inverse="true"-->
-		<set name="order_setUsers" table="user_order" cascade="save-update,delete" >
-			<!-- 一对多建表，有外键
-				hibernate机制：双向维护外键，在一和多那一方都配置外键	修改时会修改两次，性能上有缺陷
-				column属性值：外键名称
-			 -->
-			<key column="orderid"></key>
-			<!-- 客户所有的联系人，class里面写联系人实体类全路径 -->
-			<many-to-many class="com.jiudianlianxian.domain.User" column="userid"></many-to-many>
-		</set>
 		
+		<!-- 在客户映射文件中，表示所有联系人 使用set标签表示所有联系人 set标签里面有name属性： 属性值写在客户实体类里面表示联系人的set集合名称 
+			inverse属性默认值：false不放弃关系维护 true表示放弃关系维护 -->
+		<!-- inverse属性：默认false即不放弃维护外键的机会，true即放弃维护外键的机会 配置了inverse属性为true后，添加联系人时，就不会再客户方维护联系人的外键，需要再次手动维护 
+			inverse="true" -->
+		<!-- <set name="order_setUsers" table="user_order" cascade="save-update,delete" 
+			> 一对多建表，有外键 hibernate机制：双向维护外键，在一和多那一方都配置外键 修改时会修改两次，性能上有缺陷 column属性值：外键名称 
+			<key column="orderid"></key> 客户所有的联系人，class里面写联系人实体类全路径 <many-to-many class="com.jiudianlianxian.domain.User" 
+			column="userid"></many-to-many> </set> -->
+
+
+		<many-to-one name="user" class="com.jiudianlianxian.domain.User"
+			column="uoid">
+
+		</many-to-one>
+
+
+
 	</class>
 </hibernate-mapping>
